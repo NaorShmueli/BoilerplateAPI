@@ -3,15 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31313.79
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoilerplateAPI", "BoilerplateAPI\BoilerplateAPI.csproj", "{BE4AE39E-55F9-419A-BD99-8AA753E2E9A9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BoilerplateAPI", "BoilerplateAPI\BoilerplateAPI.csproj", "{BE4AE39E-55F9-419A-BD99-8AA753E2E9A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Logic", "Logic\Logic.csproj", "{62D30F3D-7C67-470C-A81E-C250651AFD9D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Logic", "Logic\Logic.csproj", "{62D30F3D-7C67-470C-A81E-C250651AFD9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{39D04209-44F0-421C-816E-68B91886F8E1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAL", "DAL\DAL.csproj", "{39D04209-44F0-421C-816E-68B91886F8E1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Common", "Common\Common.csproj", "{4A3E1FB6-47F8-4CD5-9476-CF78B118C8AF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "Common\Common.csproj", "{4A3E1FB6-47F8-4CD5-9476-CF78B118C8AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{761A7DA1-7B5E-4B9C-BEF0-9DA05184645D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tests", "Tests\Tests.csproj", "{761A7DA1-7B5E-4B9C-BEF0-9DA05184645D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Authentications", "Authentications\Authentications.csproj", "{B8A26497-D2A2-4886-8FE1-43C21E7C0E9E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{761A7DA1-7B5E-4B9C-BEF0-9DA05184645D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{761A7DA1-7B5E-4B9C-BEF0-9DA05184645D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{761A7DA1-7B5E-4B9C-BEF0-9DA05184645D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8A26497-D2A2-4886-8FE1-43C21E7C0E9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8A26497-D2A2-4886-8FE1-43C21E7C0E9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8A26497-D2A2-4886-8FE1-43C21E7C0E9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8A26497-D2A2-4886-8FE1-43C21E7C0E9E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
