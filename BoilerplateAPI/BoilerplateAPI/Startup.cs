@@ -37,10 +37,7 @@ namespace BoilerplateAPI
                 option.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 option.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
-            services.AddAuthentication(x =>
-            {
-             x.DefaultChallengeScheme = AuthenticaionScheme.Bearer;
-            })
+            services.AddAuthentication()
            .AddScheme<AuthenticationSchemeOptions, BasicAuthenticaionHandler>(AuthenticaionScheme.Basic, null)
            .AddScheme<AuthenticationSchemeOptions, BearerAuthenticaionHandler>(AuthenticaionScheme.Bearer, null);
 
