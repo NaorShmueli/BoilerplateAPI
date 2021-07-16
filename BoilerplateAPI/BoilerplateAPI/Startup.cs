@@ -1,4 +1,6 @@
+using Authentications;
 using HealthChecks.UI.Client;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
@@ -35,6 +37,13 @@ namespace BoilerplateAPI
                 option.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
                 option.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
             });
+            services.AddAuthentication(x =>
+            {
+             x.DefaultChallengeScheme = AuthenticaionScheme.Bearer;
+            })
+           .AddScheme<AuthenticationSchemeOptions, BasicAuthenticaionHandler>(AuthenticaionScheme.Basic, null)
+           .AddScheme<AuthenticationSchemeOptions, BearerAuthenticaionHandler>(AuthenticaionScheme.Bearer, null);
+
 
         }
 
@@ -45,8 +54,9 @@ namespace BoilerplateAPI
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseAuthentication();
             app.UseRouting();
+            app.UseAuthorization();
             app.UseMetricsAllEndpoints();
             app.UseEndpoints(endpoint => {
                 endpoint.MapControllers();

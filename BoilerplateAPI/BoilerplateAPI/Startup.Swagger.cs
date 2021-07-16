@@ -12,7 +12,7 @@ namespace BoilerplateAPI
 {
     public partial class Startup
     {
-        private const string ApiName = "Recipes API";
+        private const string ApiName = "Boilerplate API";
 
         private void ConfigureSwagger(IServiceCollection services)
         {

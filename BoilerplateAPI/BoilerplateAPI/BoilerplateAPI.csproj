@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Authentications\Authentications.csproj" />
     <ProjectReference Include="..\Logic\Logic.csproj" />
   </ItemGroup>
 
