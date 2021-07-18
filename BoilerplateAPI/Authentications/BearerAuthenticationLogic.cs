@@ -40,12 +40,27 @@ namespace Authentications
                 ValidAudience = "MyAudience",
                 ValidIssuer = "MyIssuer",
                 ValidateLifetime = true,
+                LifetimeValidator = (before, expires, token,parameters) =>
+                {
+                    var cloneParams = parameters.Clone();
+                    cloneParams.LifetimeValidator = null;
+                    Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(before, expires, token, cloneParams);
+                    result = AdditionalValidation(token as JwtSecurityToken);
+                    return result;
+                }
 
             }, out SecurityToken validatedToken);
 
             return result;
         }
 
-
+        private bool AdditionalValidation(JwtSecurityToken jwtSecurityToken)
+        {
+            var upperBarrier = new DateTimeOffset(DateTime.UtcNow.AddSeconds(_configuration.GetValue<int>("IssuedAtUpperBarrier"))).ToUniversalTime().ToUnixTimeSeconds();
+            var lowerBarrier = new DateTimeOffset(DateTime.UtcNow.AddSeconds(_configuration.GetValue<int>("IssuedAtLowerBarrier"))).ToUniversalTime().ToUnixTimeSeconds();
+            var issuedAt = new DateTimeOffset(jwtSecurityToken.Payload.IssuedAt).ToUniversalTime().ToUnixTimeSeconds();
+            var issueValidation = issuedAt > lowerBarrier && issuedAt < upperBarrier;
+            return issueValidation;
+        }
     }
 }
