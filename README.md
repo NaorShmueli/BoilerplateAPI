@@ -1,4 +1,6 @@
 # BoilerplateAPI
+
+ BoilerplateAPI .NET 5
  
 ## Including
 
@@ -7,4 +9,8 @@
  * Test project (using Moq and XUnit)
  * Metrics and Healthchecks
  * Logging configurations (using Serilog)
+
+## Authors
+
+[@NaorShmueli](https://www.linkedin.com/in/naor-shmueli-681b06127)
  
