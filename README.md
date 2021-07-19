@@ -8,6 +8,7 @@ BoilerplateAPI .NET 5
  * Test project (using Moq and XUnit)
  * Metrics and Healthchecks
  * Logging configurations (using Serilog)
+ * Dockerfile
 
 ## Authors
 
